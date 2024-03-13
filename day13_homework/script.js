@@ -79,25 +79,44 @@ function test(actual, expected) {
 // test(addFive(1), 6);
 // console.log(number2);
 
-let counter = 0;
+// let counter = 0;
 
-function makeCounter() {
-  // let counter = 0;
-  // console.log(counter);
-  return function () {
-    counter += 1;
+// function makeCounter() {
+//   let counter = 0;
+//   // console.log(counterA);
+//   return function () {         
+//   console.log(counterA);       //counterA
+//     console.log(makeCounter);
     
-    console.log(counter);
-    return counter;
-  };
+//     counter += 1;
+//     console.log(counterA);
+    
+//     console.log(counter);
+//     return counter;            //counterA
+//   };
+// }
+// // counter変数が外部で自由に変更される
+
+// const counterA = makeCounter();//counterAにmakeCounter()を代入
+// test(counterA(), 1);
+// test(counterA(), 2);
+
+// const counterB = makeCounter(); // 新しいカウンターを作りたい。
+// test(counterB(), 1);
+// test(counterB(), 2);
+
+/**
+ * @param {number} x
+ * @returns {(y: number) => number} 引数として y を取り、x を y で割った値を返す関数
+ */
+// ここにコードを書きましょう
+function divide(x) {
+  let number1 = x;
+  function divideByTwo(y) {
+    return number1 / y;
+  } return divideByTwo;
 }
-// counter変数が外部で自由に変更される
+const divideByTwo = divide(2);
 
-const counterA = makeCounter();//counterAにmakeCounter()を代入
-test(counterA(), 1);
-test(counterA(), 2);
-
-const counterB = makeCounter(); // 新しいカウンターを作りたい。
-test(counterB(), 1);
-test(counterB(), 2);
-
+test(divideByTwo(4), 0.5);
+test(divide(2)(1), 2);
