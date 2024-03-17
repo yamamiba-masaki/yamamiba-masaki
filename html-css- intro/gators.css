@@ -1,0 +1,16 @@
+@charset "utf-8";
+
+#greenBox {
+  width: 400px;
+    height: 100px;
+    background-color: green;
+    margin: auto;
+}
+
+
+#blueBox {
+  width: 300px;
+ 
+  background-color: blue;
+}
+
