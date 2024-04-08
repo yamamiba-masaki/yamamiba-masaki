@@ -13,79 +13,46 @@ function test(actual, expected) {
 }
 
 
-// const isEven = (array, boolean) => {
-//   const result = [];
-//   if (boolean === true) {
-//     for (const num of array) {
-//       if (num % 2 === 0) {
-//         result.push(num);
-//         console.log(result);
-//       }
-//     }
-//   } else {
-//     for (const num of array) {
-//       if (num % 2 === 1 || num % 2 === -1) {
-//         result.push(num);
-//         console.log(result);
-//       }
-//     }
-//   } return result;
-// }
-
-
-// test(isEven([1, 2, 3, 4, 5, -6], true), ([2, 4, -6]));
-// test(isEven([1, 2, 3, 4, 5, -6, -7], false), ([1, 3, 5, -7]));
-// test(isEven([1, 2, 3, 4, 5, -6], true), ([2, 4, -6]));
-// test(isEven([1, 2, 3, 4, 5, -6], true), ([2, 4, -6]));
-// test(isEven([1, 2, 3, 4, 5, -6, 44], true), ([2, 4, -6, 44]));
-
-//followup assessment
-
 //1.
 // ここにコードを書きましょう
-// const evenOrOdd = (array, boolean) => {
-//   const result = [];
-//   if (boolean === true) {
-//     for (const num of array) {
-//       if (num % 2 === 0) {
-//         result.push(num);
-//       }
-//     }
-//   } else {
-//     for (const num of array) {
-//       if (num % 2 === 1 || num % 2 === -1) {
-//         result.push(num);
-//       }
-//     }
-//   } return result;
-// }
+const evenOrOdd = (array, boolean) => {
+  const result = [];
+  if (boolean === true) {
+    for (const num of array) {
+      if (num % 2 === 0) {
+        result.push(num);
+      }
+    }
+  } else {
+    for (const num of array) {
+      if (num % 2 === 1 || num % 2 === -1) {
+        result.push(num);
+      }
+    }
+  } return result;
+}
 
-// test(evenOrOdd([1, 2, 3, 4, 5], true), [2, 4]); // [2, 4]
-// test(evenOrOdd([0, 4, 36], false), []); // []
-// test(evenOrOdd([-1, -2, 4, -5, -7], false), [-1, -5, -7]); // [-1, -5, -7]
-// //  追加テスト
-// test(evenOrOdd([1, 2, 3, 4, 5, -2, -1, 0, 55.5], true), [2, 4, -2, 0]); // [2, 4, -2, 0]
-// test(evenOrOdd([1, 2, 3, 4, 5, -2, -1, 0, 55.5], false), [1, 3, 5, -1]); // [1, 3, 5, -1]
+test(evenOrOdd([1, 2, 3, 4, 5], true), [2, 4]); // [2, 4]
+test(evenOrOdd([0, 4, 36], false), []); // []
+test(evenOrOdd([-1, -2, 4, -5, -7], false), [-1, -5, -7]); // [-1, -5, -7]
+//  追加テスト
+test(evenOrOdd([1, 2, 3, 4, 5, -2, -1, 0, 55.5], true), [2, 4, -2, 0]); // [2, 4, -2, 0]
+test(evenOrOdd([1, 2, 3, 4, 5, -2, -1, 0, 55.5], false), [1, 3, 5, -1]); // [1, 3, 5, -1]
 
 //2.
 
 // ここにコードを書きましょう
-// const findKeys = (objects, target) => {
-//   const result = [];
-//   for (const key in objects) {
-//     if (target === objects[key]) {
-//       result.push(key);
-//     }
-//   } return result;
-// }
+const findKeys = (objects, target) => {
+  const result = [];
+  for (const key in objects) {
+    if (target === objects[key]) {
+      result.push(key);
+    }
+  } return result;
+}
 
-// test(findKeys({ a: 1, b: 2, c: 6, d: 4, e: 2 }, 2), ["b", "e"]); // ["b", "e"]
-// test(findKeys({ 1: "h", b: "el", c: "hello", d: "hello", e: "o" }, "hello"), ["c", "d"]); // ["c", "d"]
-
-
-
-
-
+test(findKeys({ a: 1, b: 2, c: 6, d: 4, e: 2 }, 2), ["b", "e"]); // ["b", "e"]
+test(findKeys({ 1: "h", b: "el", c: "hello", d: "hello", e: "o" }, "hello"), ["c", "d"]); // ["c", "d"]
 
 
 //3. 解けない
@@ -116,18 +83,18 @@ function test(actual, expected) {
 //4.
 
 // ここにコードを書きましょう
-// const add = (x) => {
-//   return function (y) {
-//     return x + y
-//   }
-// }
+const add = (x) => {
+  return function (y) {
+    return x + y
+  }
+}
 
-// const addTwo = add(2);
-// test(addTwo(3), 5); // 5
-// test(addTwo(70), 72); // 72
+const addTwo = add(2);
+test(addTwo(3), 5); // 5
+test(addTwo(70), 72); // 72
 
-// const addOneHundred = add(100);
-// test(addOneHundred(3), 103); // 103
+const addOneHundred = add(100);
+test(addOneHundred(3), 103); // 103
 
 //5.
 
@@ -152,19 +119,17 @@ function test(actual, expected) {
 //7.
 
 // ここにコードを書きましょう
-const map = (arrays, addOne) => {
+const map = (enyThing) => {
   const result = [];
-  for (const number of arrays) {
-    
-    // console.log(number);
-    result.push(addOne(number));
-    // console.log(result);
-    for (const obj in arrays) {
-         result.push(addOne(obj)) ;
-        }
-      
-    
-  }return result;
+  if (Array.isArray(enyThing)) {
+    for (const number of enyThing) {
+      result.push(addOne(number));
+    } return result;
+  } else {
+    for (const obj in enyThing) {
+      result.push(addOne(enyThing[obj]));
+    } return result;
+  }
 }
 
 function addOne(num) {
@@ -172,3 +137,52 @@ function addOne(num) {
 }
 test(map([1, 2, 3], addOne), [2, 3, 4]); // [2, 3, 4]
 test(map({ a: 1, b: 2, c: 3 }, addOne), [2, 3, 4]); // [2, 3, 4]
+//追加テスト
+test(map({ a: -1, b: -2, c: -3 }, addOne), [0, -1, -2]); // [2, 3, 4]
+
+
+//8.
+// ここにコードを書きましょう
+
+changeMiddle("I like cats", "love"); // "I love cats"
+changeMiddle("red green blue", "yellow"); // "red yellow blue"
+
+
+
+//9.
+// ここにコードを書きましょう
+
+countSomething(["a", "b", "c", true, false, 2]); // "STRING COUNT: 3"
+countSomething([true, true, false, true]); // "BOOL COUNT: 4"
+countSomething([true, true, 1, 0, 1, false, 1]); // "NUMBER COUNT: 4"
+
+
+//10.
+// ここにコードを書きましょう
+
+each({ a: 1, b: 2, c: 3 }, console.log);
+each([4, 5, 6], console.log);
+
+// 上記を実行すると下記を表示するはずです
+// 1
+// 2
+// 3
+// 4
+// 5
+// 6
+
+
+//11.
+// ここにコードを書きましょう
+
+function multiplyTwo(x) {
+  return x * 2;
+}
+
+function addTen(x) {
+  return x + 10;
+}
+
+const baz = compose(multiplyTwo, addTen);
+baz(5); // 20
+baz(100); // 210
